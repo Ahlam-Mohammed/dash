@@ -1,0 +1,73 @@
+<!-- Head -->
+<%- include('../include/head.ejs') %> 
+
+    <main>
+        <div class="w-100">
+            <div class="row p-0 m-0">
+                <div class="col-lg-3 col-12 pb-4 bg" >
+                    <!-- Sidebar Section -->
+                    <%- include('../components/sidebar.ejs')  %> 
+                </div>
+                <div class="col-lg-9 col-12">
+                    <div class="container-lg p-0">
+                        <!-- Content Section -->
+                        <section>
+                            <div class="row p-lg-4">
+                                <div class="col-12 mb-3">
+                                <% if (about != (null || undefined)) { %>
+                                    <div class="card bg-transparent shadow p-3">
+                                        <div class="card-header d-flex justify-content-between align-items-center">
+                                            <h1 class="fs-3 fw-bold text-light">About</h1>
+                                            <% if (Object.keys(about).length === 0) { %>
+                                                <a role="button" data-bs-toggle="modal" data-bs-target="#addabout" class="text-light"><i class="fa fa-plus fw-bold fs-5"></i></a>
+                                            <% } %>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="row">
+                                            <% about.forEach((a) => { %>
+                                                <!-- single skill -->
+                                                <div class="col-6">
+                                                    <div class="input-group flex-nowrap bg-transparent">
+                                                        <img src="/uploads/<%= a.img %>" class="img-fluid img" alt="">
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <h3 class="text-light mb-3 d_name"><%= a.displayName %></h3>
+                                                    <h5 class="text-success mb-3 p_name"><%= a.professionalName %></h5>
+                                                    <p class="text-light mb-3 short_desc"><%= a.shortDescription %></p> <hr>
+                                                    <p class="text-light mb-3 short_desc"><%= a.description %></p>
+                                                    <div class="d-flex justify-content-end">
+                                                        <button type="button" class="btn btn-success mt-4 rounded m-2 updateAbout" id="update" data-bs-toggle="modal" data-bs-target="#updateAbout"
+                                                        data-about-id="<%= a._id %>" data-about-d-name="<%= a.displayName %>" data-about-p-name="<%= a.professionalName %>"
+                                                        data-about-short="<%= a.shortDescription %>" data-about-desc="<%= a.description %>" >Update</button>
+                                                        <button type="button" class="btn btn-danger mt-4 rounded m-2 deleteAbout" data-bs-toggle="modal" data-bs-target="#deleteAbout" data-about-id="<%= a._id %>">Delete</button>
+                                                    </div>
+                                                </div>
+                                                <% }) } %>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal Add -->
+    <%- include('../modal/about/create.ejs') %> 
+
+    <!-- Modal Delete -->
+    <%- include('../modal/about/delete.ejs') %> 
+
+    <!-- Modal Update -->
+    <%- include('../modal/about/update.ejs') %> 
+    
+    
+    <!-- Script File -->
+    <%- include('../include/script.ejs') %> 
+    
+<!-- Footer -->
+<%- include('../include/footer.ejs') %> 

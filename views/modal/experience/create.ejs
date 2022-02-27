@@ -1,0 +1,35 @@
+<div class="modal fade" id="addExp" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg">
+        <div class="modal-content p-3">
+            <div class="modal-header">
+                <h4 class="modal-title fw-bold text-center" id="exampleModalLabel">Add Experience</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="exp/create" method="post" class="row g-3 needs-validation" novalidate>
+                    <!-- Job details -->
+                    <div class="col-12">
+                        <label for="jop-position" class="form-label">What is the job of this positio?</label>
+                        <input type="text" name="job" class="form-control rounded-pill" id="jop-position" placeholder="Ex. Head of Human Resources">
+                    </div>
+                    <div class="col-12">
+                        <label for="job-field" class="form-label">Which job field does this title fall under?</label>
+                        <input type="text" name="job_title" class="form-control rounded-pill" id="job-field" placeholder="Ex. Human Resources">
+                    </div>
+                    <div class="col-12">
+                        <label for="start-date" class="form-label">Date</label>
+                        <input type="date" name="date" class="form-control rounded-pill" id="start-date" placeholder="start-date">
+                    </div>
+                    <div class="col-12">
+                        <label for="description" class="form-label">Description</label>
+                        <textarea name="description" class="form-control rounded" id="description" cols="30" rows="10"></textarea>
+                        <!-- <input type="text" class="form-control rounded-pill" id="description" placeholder="Description"> -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

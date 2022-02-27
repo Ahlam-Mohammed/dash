@@ -1,0 +1,25 @@
+<!-- Modal Add Skill -->
+<div class="modal fade" id="updateSkill" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="bg modal-content p-3">
+            <div class="modal-header">
+                <h4 class="modal-title fw-bold text-center text-light" id="exampleModalLabel">Add Skill</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="skill/update" method="post" class="row g-3 needs-validation" novalidate>
+                    <input type="hidden" name="skill_id" id="edit-modal-id">
+                    <div class="col-12">
+                        <input name="name" id="skill-name-input" type="text" class="form-control rounded-pill bg-transparent" placeholder="Skill">
+                    </div>
+                    <div class="col-12">
+                        <input name="ratio" id="skill-ratio-input" type="range" class="form-range text-danger">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+  </div>

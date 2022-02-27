@@ -1,0 +1,201 @@
+.bg{
+  background-color: #212121;
+  box-shadow: rgb(0 0 0 / 15%) 0px 2px 10px 0px;
+
+}
+.bg-dark-light{
+  background-color: rgb(43, 43, 43);
+}
+.bg--light{
+  background-color: #52536a08;;
+  backdrop-filter: blur(6px);
+  box-shadow: rgb(0 0 0 / 15%) 0px 2px 10px 0px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99999;
+}
+.bg-20{
+  background-color: #52536A;
+}
+.bg-50{
+  background-color: #ffffffed;
+  backdrop-filter: blur(6px);;
+}
+a{
+  text-decoration: none;
+}
+.fs-7{
+  font-size: 14px;
+}
+.fs-8{
+  font-size: 13px;
+}
+.logo{
+  height: 40px;
+  width: 40px;
+}
+.logo-lg{
+  height: 70px;
+  width: 70px;
+}
+.pl{
+  padding-left: 2.5rem;
+}
+.h--75{
+  height: 80px;
+}
+.border-radius{
+  border-radius: 0 20% 0;
+  -webkit-border-radius: 0 20% 0;
+  -moz-border-radius: 0 20% 0;
+  -ms-border-radius: 0 20% 0;
+  -o-border-radius: 0 20% 0;
+  
+}
+@media screen and (max-width: 768px) {
+  .suggestion{
+      height: 300px !important;
+  }
+  .search{
+      width: 90% !important;
+  }
+  
+}
+@media screen and (max-width: 1235px) and (min-width:773px) {
+  .search{
+      bottom: 45px !important;
+  } 
+  .profile-img{
+      width: 15%;
+  } 
+}
+@media screen and (max-width:773px) {
+  .search{
+      top: 22px !important;
+  }  
+  .profile-img{
+      width: 20%;
+  }
+}
+@media screen and (max-width:992px) {
+  lottie-player{
+      width: 300px !important;
+      margin: auto !important;
+  }
+  .bg-login{
+      height: 338px !important;
+      /* margin-top: 20px; */
+  }
+}
+@media screen and (max-whdth:474px) {
+  .profile-img{
+      width: 35%;
+  }
+}
+@media screen and (max-width:413px) {
+  .profile-img{
+      width: 40%;
+  }
+}
+/* hover */
+.btn-outline-primary:hover{
+  color: white !important;
+  background-color: #766DF4 !important;
+}
+.btn-light:hover {
+  color: white !important;
+  background-color: #766DF4 !important;
+}
+.btn-primary:hover{
+  color: #766DF4 !important;
+  background-color: #F8F9FA !important;
+}
+/* circle Progress */
+.progress__circular{
+  display:grid;
+  /* height:100%; */
+  text-align: center;
+  place-items: center;
+  background: #fff;
+}
+.circular{
+  height:100px;
+  width: 100px;
+  position: relative;
+  /* transform:scale(1.5);
+  -webkit-transform:scale(1.5);
+  -moz-transform:scale(1.5);
+  -ms-transform:scale(1.5);
+  -o-transform:scale(1.5); */
+}
+.circular .inner{
+  position: absolute;
+  z-index: 6;
+  top: 50%;
+  left: 50%;
+  height: 80px;
+  width: 80px;
+  margin: -40px 0 0 -40px;
+  background: #dde6f0;
+  border-radius: 100%;
+}
+.circular .number{
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  z-index:10;
+  font-size:18px;
+  font-weight:500;
+  color:#766DF4;
+}
+.circular .bar{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  clip: rect(0px, 100px, 100px, 50px);
+}
+.circle .bar .progress{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  clip: rect(0px, 50px, 100px, 0px);
+  background: #766DF4;
+}
+.circle .left .progress{
+  z-index:1;
+  animation: left 4s linear both;
+}
+@keyframes left{
+  100%{
+      transform: rotate(180deg);
+      -webkit-transform: rotate(180deg);
+      -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      -o-transform: rotate(180deg);
+}
+}
+.circle .right {
+  transform: rotate(180deg);
+  z-index:3;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+}
+.circle .right .progress{
+  animation: right 4s linear both;
+  animation-delay:4s;
+}
+@keyframes right{
+  100%{
+      transform: rotate(140deg);
+      -webkit-transform: rotate(140deg);
+      -moz-transform: rotate(140deg);
+      -ms-transform: rotate(140deg);
+      -o-transform: rotate(140deg);
+}
+}

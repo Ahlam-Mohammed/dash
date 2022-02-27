@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="auth/signup" method="post">
+        email: <input type="email" name="email">
+        phoneNumber: <input type="text" name="phoneNumber">
+        password: <input type="password" name="password">
+        firstName: <input type="text" name="firstName" id="">
+        lastName: <input type="text" name="lastName">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+
+        <input type="submit" value="save">
+    </form>
+
+    <!-- <script src="/javascripts/firebase.js"></script>
+    <script src="/javascripts/authService.js"></script>
+    <script>
+        firebase.auth().onAuthStateChanged(user => {
+            if (user) {
+                return user;
+            }
+        });
+        const token = await firebase.auth.currentUser.getIdToken();
+
+    </script> -->
+</body>
+</html>

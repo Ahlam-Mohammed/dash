@@ -1,0 +1,75 @@
+<!-- Head -->
+<%- include('../include/head.ejs') %> 
+
+    <main>
+        <div class="w-100">
+            <div class="row p-0 m-0">
+                <div class="col-lg-3 col-12 pb-4 bg" >
+                    <!-- Sidebar Section -->
+                    <%- include('../components/sidebar.ejs')  %> 
+                </div>
+                <div class="col-lg-9 col-12">
+                    <div class="container-lg p-0">
+                        <!-- Content Section -->
+                        <section>
+                            <div class="row p-lg-4">
+                                <div class="col-12 mb-3">
+                                  <% if (exp != (null || undefined)) { %>
+                                    <div class="card bg-transparent shadow p-3">
+                                        <div class="card-header d-flex justify-content-between align-items-center">
+                                            <h1 class="fs-3 fw-bold text-light">Experience</h1>
+                                            <a role="button" data-bs-toggle="modal" data-bs-target="#addExp" class="text-light"><i class="fa fa-plus fw-bold fs-5"></i></a>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <% exp.forEach((e) => { %>
+                                                <!-- single skill -->
+                                                <div class="col-12 mb-5">
+                                                    <div class="bg border-primary border-3 border-success border-start shadow-sm p-3">
+                                                        <div class="d-flex justify-content-between align-items-center">
+                                                            <a><h4 class="text-light"><%= e.job %> </h4></a>
+                                                            <div>
+                                                                <a role="button" data-bs-toggle="modal" class="updateSkill" data-bs-target="#updateSkill">
+                                                                    <i class="fa fa-pencil-alt text-secondary"></i>
+                                                                  </a>
+                                                                  <a role="button" data-bs-toggle="modal" class="deleteexp" data-bs-target="#deleteexp" data-exp-id="<%= e._id %>">
+                                                                    <i class="fa fa-trash text-danger"></i>
+                                                                  </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="">
+                                                            <a href="../templates/detailsExp.html" class="text-black-50 fs-6 d-flex flex-column">
+                                                                <span class="text-success"><%= e.date %> </span>
+                                                                <span class="text-light"><%= e.job_title %> </span>
+                                                                <p class="text-secondary"><%= e.description %> </p>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <% }) } %>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal Delete -->
+    <%- include('../modal/experience/delete.ejs') %> 
+
+    <!-- Modal Add -->
+    <%- include('../modal/experience/create.ejs')  %> 
+
+    <!-- Modal Edit -->
+    <%- include('../modal/skill/update.ejs')  %> 
+    
+    <!-- Script File -->
+    <%- include('../include/script.ejs') %> 
+    
+<!-- Footer -->
+<%- include('../include/footer.ejs') %> 

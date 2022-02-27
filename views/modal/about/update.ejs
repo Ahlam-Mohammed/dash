@@ -1,0 +1,49 @@
+<!-- Modal Add Skill -->
+<div class="modal fade" id="updateAbout" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="bg modal-content p-3">
+            <div class="modal-header">
+                <h4 class="modal-title fw-bold text-center text-light" id="exampleModalLabel">About You</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="about/update" enctype="multipart/form-data" method="post" class="row g-3 needs-validation" novalidate>
+                    <input type="hidden" name="about_id" id="edit-about-id">
+                    <div class="col-12">
+                        <div class="input-group flex-nowrap">
+                            <input name="d_name" id="skill-d-name-input" type="text" class="form-control text-light rounded-pill  bg-transparent" placeholder="Display Name in Landing Section"  required>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="input-group flex-nowrap">
+                            <input name="p_name" id="skill-p-name-input" type="text" class="form-control text-light rounded-pill  bg-transparent" placeholder="Professional Name" required>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="input-group flex-nowrap">
+                            <input name="short_desc" id="skill-short-desc-input" type="text" class="form-control text-light rounded-pill bg-transparent" placeholder="Short Description">
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="input-group flex-nowrap">
+                            <textarea name="desc" id="skill-desc-input" type="text" rows="5" class="form-control text-light rounded bg-transparent" placeholder="About You" required></textarea>
+                        </div>
+                    </div>
+                    <!-- <div class="col-12">
+                        <div class="input-group flex-nowrap bg-transparent">
+                            <input name="img" id="skill-img-input" type="hidden" class="form-control text-light rounded-pill bg-transparent" placeholder="Image in Landing Section" required>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="input-group flex-nowrap bg-transparent">
+                            <input name="cv" id="skill-cv-input" type="hidden" class="form-control text-light rounded-pill bg-transparent" placeholder="Image in Landing Section" >
+                        </div>
+                    </div> -->
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success">Add</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,72 @@
+<!-- Head -->
+<%- include('../include/head.ejs') %> 
+
+    <main>
+        <div class="w-100">
+            <div class="row p-0 m-0">
+                <div class="col-lg-3 col-12 pb-4 bg" >
+                    <!-- Sidebar Section -->
+                    <%- include('../components/sidebar.ejs')  %> 
+                </div>
+                <div class="col-lg-9 col-12">
+                    <div class="container-lg p-0">
+                        <!-- Content Section -->
+                        <section>
+                            <div class="row p-lg-4">
+                                <div class="col-12 mb-3">
+                                  <% if (skills != (null || undefined)) { %>
+                                    <div class="card bg-transparent shadow p-3">
+                                        <div class="card-header d-flex justify-content-between align-items-center">
+                                            <h1 class="fs-3 fw-bold text-light">Skills</h1>
+                                            <a role="button" data-bs-toggle="modal" data-bs-target="#addSkill" class="text-light"><i class="fa fa-plus fw-bold fs-5"></i></a>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="row">
+                                              <% skills.forEach((skill) => { %>
+                                                <!-- single skill -->
+                                                <div class="col-12 mb-5">
+                                                    <div class="bg border-primary border-3 border-start border-success shadow-sm p-3">
+                                                        <div class="d-flex justify-content-between align-items-center">
+                                                            <h4 class="text-light"><%= skill.name %></h4>
+                                                            <div>
+                                                                <a role="button" data-bs-toggle="modal" class="updateSkill" data-bs-target="#updateSkill" data-skill-id="<%= skill._id %>" data-skill-name="<%= skill.name %>"
+                                                                  data-skill-ratio="<%= skill.ratio %>">
+                                                                  <i class="fa fa-pencil-alt text-secondary"></i>
+                                                                </a>
+                                                                <a role="button" data-bs-toggle="modal" class="deleteSkill" data-bs-target="#deleteSkill" data-skill-id="<%= skill._id %>">
+                                                                  <i class="fa fa-trash text-danger"></i>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="progress">
+                                                            <div class="progress-bar bg-success" role="progressbar" style="width: <%= skill.ratio %>% " aria-valuenow="<%= skill.ratio %>" aria-valuemin="0" aria-valuemax="100"><%= skill.ratio %></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <% }) } %>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal Delete -->
+    <%- include('../modal/skill/delete.ejs') %> 
+
+    <!-- Modal Add -->
+    <%- include('../modal/skill/create.ejs')  %> 
+
+    <!-- Modal Edit -->
+    <%- include('../modal/skill/update.ejs')  %> 
+    
+    <!-- Script File -->
+    <%- include('../include/script.ejs') %> 
+    
+<!-- Footer -->
+<%- include('../include/footer.ejs') %> 

@@ -1,0 +1,17 @@
+<div class="modal fade" id="deleteexp" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="bg modal-content">
+            <form action="exp/delete" method="post">
+              <input type="hidden" name="exp_id" id="delete-exp-id" />
+              <div class="modal-body fw-bold d-flex justify-content-lg-center align-items-center flex-column">
+                <i class="bi bi-exclamation-circle fs-1 text-danger"></i>
+                <h3 class="fs-4 text-light">Do you want to delete your information ?</h3>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-success" data-bs-dismiss="modal">No</button>
+                  <button type="submit" class="btn btn-danger">Yes</button>
+              </div>
+            </form>
+        </div>
+    </div>
+  </div>
